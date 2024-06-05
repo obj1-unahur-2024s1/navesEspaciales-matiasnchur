@@ -145,11 +145,11 @@ class NaveDePasajeros inherits NaveEspacial{
 	
 	method servirComida(cuanto){
 		self.descargarComida(cuanto)
-		racionesDeComidasServidas += cuanto
+		racionesDeComidasServidas += racionesDeComidasServidas.min(cuanto)
 	}
 	
 	override  method tienePocaActividad() {
-		return racionesDeComidasServidas > 50
+		return racionesDeComidasServidas < 50
 	}
 }
 
